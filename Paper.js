@@ -2,8 +2,8 @@ class Paper{
     constructor(x,y,radius){
         var options ={
             
-            restitution :0,
-            friction :0,
+            restitution :0.06,
+            friction :0.5,
             density :1.2
             
         }
