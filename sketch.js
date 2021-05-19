@@ -15,15 +15,19 @@ function setup(){
     world = engine.world;
 
     ground = new Ground();
-    crumpledPaper = new Paper();
+     
 
+    
+    binPart1 = new Dustbin(900,505,10,150);
+    binPart2 = new Dustbin(960,580,130,10);
+    binPart3 = new Dustbin(1025,505,10,150);
+    crumpledPaper= new Paper(250,530,20);
     bin = createSprite(964,520,20,20);
     bin.addImage(binImg);
     bin.scale = 0.45;
 
-    binPart1 = new Dustbin(902,505,10,120);
-    binPart2 = new Dustbin(962,565,130,10);
-    binPart3 = new Dustbin(1024,505,10,120);
+   
+
 }
 
 function draw(){
@@ -34,16 +38,16 @@ function draw(){
 
     
     ground.display();
-    crumpledPaper.display();
+   
     binPart1.display();
     binPart2.display();
     binPart3.display(); 
-      
+    crumpledPaper.display();
     drawSprites();
 }
 
 function keyPressed(){
     if(keyCode === UP_ARROW){
-        Matter.Body.applyForce(crumpledPaper.body,crumpledPaper.body.position,{x:74,y:-75});
+        Matter.Body.applyForce(crumpledPaper.body,crumpledPaper.body.position,{x:74,y:-80});
     }
 }

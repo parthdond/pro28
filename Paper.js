@@ -1,5 +1,5 @@
 class Paper{
-    constructor(){
+    constructor(x,y,radius){
         var options ={
             
             restitution :0,
@@ -7,7 +7,8 @@ class Paper{
             density :1.2
             
         }
-        this.body = Bodies.circle(250,540,20,options);
+        this.body = Bodies.circle(x,y,radius,options);
+        this.radius=radius
         this.width =33;
         this.image = loadImage("Images/paper.png");
         World.add(world, this.body);
@@ -18,6 +19,6 @@ class Paper{
         fill("white");
         rotate(angle);
         imageMode(CENTER);
-        image(this.image,pos.x,pos.y,33,33);
+        image(this.image,pos.x,pos.y,this.width,this.width);
     }
 }
